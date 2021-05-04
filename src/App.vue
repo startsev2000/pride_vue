@@ -9,6 +9,7 @@
         <a class="topname">PRIDE</a><br />
         <a class="comment">самое лучшее состояние, высшая степень!</a>
       </div>
+      <div class="news"></div>
       <div class="hello">
         <div class="helloimage">
           <img :src="require('./assets/P.Sisoev.jpg')" />
@@ -54,9 +55,9 @@ export default {};
     margin: 0;
   }
 
-  article {
-    padding-left: 200px;
-    padding-right: 200px;
+  main {
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
   .topnav {
@@ -104,11 +105,20 @@ export default {};
     font-style: italic;
   }
 
+  .news {
+    background: black;
+    height: 100px;
+  }
+
   .hello {
+    padding: 20px 40px 40px;
+    border: 3px solid black;
+    max-width: 720px;
     &image {
       display: inline-block;
       vertical-align: top;
       width: 46%;
+      margin: 20px 30px 0 0;
     }
     &text {
       display: inline-block;
@@ -117,6 +127,10 @@ export default {};
         width: 100%;
       }
     }
+  }
+
+  .hello img {
+    border-radius: 20px;
   }
 
   @media screen and (max-width: 600px) {
