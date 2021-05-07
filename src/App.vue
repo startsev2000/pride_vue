@@ -9,7 +9,7 @@
         <a class="topname">PRIDE</a><br />
         <a class="comment">самое лучшее состояние, высшая степень!</a>
       </div>
-      <div class="news"></div>
+      <div class="news">Новость дня</div>
       <div class="hello">
         <div class="helloimage">
           <img :src="require('./assets/P.Sisoev.jpg')" />
@@ -47,7 +47,7 @@
           </p>
         </article>
       </div>
-      <div class="principles"></div>
+      <div class="principles">Принципы</div>
       <div class="services">
         <article>
           <h2>Компания оказывает полный комплекс услуг</h2>
@@ -62,12 +62,20 @@
           <p>Сметной документации</p>
         </article>
       </div>
-      <div class="competitions"></div>
+      <div class="competitions">Архитектурные конкурсы</div>
       <div class="business">
         <h2>Основные бизнес-процессы</h2>
       </div>
     </main>
-    <div class="mapinfo"></div>
+    <div class="mapinfo">
+      <div class="map">
+        <img :src="require('./assets/map.png')" />
+      </div>
+      <div class="time">
+        <h2>График работы</h2>
+        <p>С 9:00 до 18:00 или 10:00 до 19:00, с перерывом на обед</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -86,10 +94,10 @@ html {
   margin: 0;
 }
 
-main {
+/*main {
   padding-left: 3%;
   padding-right: 3%;
-}
+}*/
 
 .topnav {
   overflow: hidden;
@@ -138,25 +146,31 @@ main {
 
 .news,
 .principles,
-.competitions,
-.mapinfo {
+.competitions {
   background: #272727;
   height: 200px;
+  text-align: center;
+  color: white;
 }
 
 .hello {
   padding: 20px 40px 40px;
-  border: 3px solid black;
-  max-width: 720px;
+  border-bottom: 3px solid black;
+  max-width: auto;
+  img {
+    width: 55%;
+    height: 55%;
+  }
   &image {
     display: inline-block;
     vertical-align: top;
     width: 46%;
-    margin: 20px 30px 0 0;
+    margin: 20px 0 0 20px;
   }
   &text {
     display: inline-block;
     width: 46%;
+    font-size: 22px;
     @media (max-width: 620px) {
       width: 100%;
     }
@@ -174,6 +188,23 @@ main {
 
 .services, .business {
   text-align: center;
+}
+
+.mapinfo {
+  background: #272727;
+  padding: 20px 40px 40px;
+  img {
+    width: 75%;
+    height: 75%;
+  }
+  color: white;
+  text-align: center;
+  .map, .time {
+    display: inline-block;
+    vertical-align: top;
+  }
+  font-size: 18px;
+  
 }
 
 @media screen and (max-width: 600px) {
