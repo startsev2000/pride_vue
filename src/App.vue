@@ -47,7 +47,10 @@
           </p>
         </article>
       </div>
-      <div class="principles">Принципы</div>
+      <div class="principles">
+        <h2>Принципы</h2>
+        <img :src="require('./assets/principles.svg')" />
+      </div>
       <div class="services">
         <article>
           <h2>Компания оказывает полный комплекс услуг</h2>
@@ -56,15 +59,17 @@
             технического заказчика и оценки градостроительного потенциала.
           </p>
           <h2>Основные направления нашей деятельности – РАЗРАБОТКА</h2>
-          <p>Генеральных планов</p>
-          <p>Архитектурных/конструктивных/инженерных решений</p>
-          <p>Дизайн-проектов интерьеров</p>
-          <p>Сметной документации</p>
+          <li>Генеральных планов</li>
+          <li>Архитектурных/конструктивных/инженерных решений</li>
+          <li>Дизайн-проектов интерьеров</li>
+          <li>Сметной документации</li>
+          <p></p>
         </article>
       </div>
       <div class="competitions">Архитектурные конкурсы</div>
       <div class="business">
         <h2>Основные бизнес-процессы</h2>
+        <img :src="require('./assets/business-processes.png')" />
       </div>
     </main>
     <div class="mapinfo">
@@ -99,6 +104,9 @@ html {
   padding-right: 3%;
 }*/
 
+li {
+  padding: 10px 10px 10px 10px;
+}
 .topnav {
   overflow: hidden;
   background-color: grey;
@@ -145,10 +153,9 @@ html {
 }
 
 .news,
-.principles,
 .competitions {
   background: #272727;
-  height: 200px;
+  height: 400px;
   text-align: center;
   color: white;
 }
@@ -182,12 +189,29 @@ html {
 }
 
 .info {
-  //background-image: url('./assets/backround-1.svg');
+  background-image: url('~@/assets/background-1.svg');
   font-size: 40px;
+  padding: 30px 30px 30px 30px;
 }
 
+.principles {
+  background: #272727;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  img {
+    padding: 20px 20px 20px 20px;
+    width: 40%;
+    height: 40%;
+  }
+}
 .services, .business {
   text-align: center;
+  font-size: 30px;
+  img {
+    width: 75%;
+    height: 75%;
+  }
 }
 
 .mapinfo {
@@ -204,7 +228,6 @@ html {
     vertical-align: top;
   }
   font-size: 18px;
-  
 }
 
 @media screen and (max-width: 600px) {
