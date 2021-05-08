@@ -66,7 +66,18 @@
           <p></p>
         </article>
       </div>
-      <div class="competitions">Архитектурные конкурсы</div>
+      <div class="competitions">
+        <h2>Мы активно участвуем в архитектурных конкурсах</h2>
+        <p></p>
+        <p>
+          В том числе в консорциумах с иностранными компаниями, которым мы
+          помогаем адаптировать проекты под реалии российского рынка и
+          сопровождаем их на всех этапах реализации.
+        </p>
+        <img :src="require('./assets/achievement-1.svg')" class="ach1"/>
+        <img :src="require('./assets/achievement-2.svg')" class="ach2"/>
+        <img :src="require('./assets/achievement-3.svg')" class="ach3"/>
+      </div>
       <div class="business">
         <h2>Основные бизнес-процессы</h2>
         <img :src="require('./assets/business-processes.png')" />
@@ -90,7 +101,7 @@ export default {};
 
 <style lang="scss">
 body {
-  font-family: 'Arial Narrow'; // по пожеланию заказчика
+  font-family: "Arial Narrow"; // по пожеланию заказчика
 }
 
 body,
@@ -152,8 +163,7 @@ li {
   font-style: italic;
 }
 
-.news,
-.competitions {
+.news {
   background: #272727;
   height: 400px;
   text-align: center;
@@ -189,7 +199,7 @@ li {
 }
 
 .info {
-  background-image: url('~@/assets/background-1.svg');
+  background-image: url("~@/assets/background-1.png");
   font-size: 40px;
   padding: 30px 30px 30px 30px;
 }
@@ -205,7 +215,8 @@ li {
     height: 40%;
   }
 }
-.services, .business {
+.services,
+.business {
   text-align: center;
   font-size: 30px;
   img {
@@ -223,11 +234,43 @@ li {
   }
   color: white;
   text-align: center;
-  .map, .time {
+  .map,
+  .time {
     display: inline-block;
     vertical-align: top;
   }
   font-size: 18px;
+}
+
+.competitions {
+  background-image: url("~@/assets/background-2.png");
+  padding: 20px 20px 20px 20px;
+  position: relative;
+  text-align: center;
+  img {
+    width: 55%;
+    height: 55%;
+  }
+  .ach1 {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    pointer-events: all;
+    margin: 30px;
+  }
+  .ach2 {
+    position: absolute;
+    
+  }
+  .ach3 {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    pointer-events: all;
+    margin: 30px;
+    
+  }
+  
 }
 
 @media screen and (max-width: 600px) {
