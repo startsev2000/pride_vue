@@ -82,6 +82,11 @@
         <h2>Основные бизнес-процессы</h2>
         <img :src="require('./assets/business-processes.png')" />
       </div>
+      <div class="links">
+        <a href="\\pride-fs\Рабочая\Кадры"><p>Наш коллектив</p></a>
+        <a href="\\pride-f/Lib"><p>Библиотека внутренних документов</p></a>
+        <a href=""><p>Биржа идей</p></a>
+      </div> 
     </main>
     <div class="mapinfo">
       <div class="map">
@@ -120,7 +125,7 @@ li {
 }
 .topnav {
   overflow: hidden;
-  background-color: grey;
+  background-color: #f9ffff;
 }
 
 .topnav a {
@@ -168,6 +173,8 @@ li {
   height: 400px;
   text-align: center;
   color: white;
+  font-size: 30px;
+  padding: 20px 20px 20px 20px;
 }
 
 .hello {
@@ -200,6 +207,9 @@ li {
 
 .info {
   background-image: url("~@/assets/background-1.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 40px;
   padding: 30px 30px 30px 30px;
 }
@@ -211,8 +221,8 @@ li {
   padding: 10px;
   img {
     padding: 20px 20px 20px 20px;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
   }
 }
 .services,
@@ -244,33 +254,46 @@ li {
 
 .competitions {
   background-image: url("~@/assets/background-2.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 20px 20px 20px 20px;
   position: relative;
   text-align: center;
+  font-size: 30px;
   img {
     width: 55%;
     height: 55%;
   }
   .ach1 {
-    z-index: 1;
-    top: 0;
-    left: 0;
-    pointer-events: all;
-    margin: 30px;
+    position: relative;
+    z-index: 0;
+    left: 5%;
+    bottom: 5%;
   }
   .ach2 {
     position: absolute;
-    
+    z-index: 1;
+    left: 1%;
+    bottom: 14%;
   }
   .ach3 {
+    position: relative;
     z-index: 2;
-    top: 0;
-    left: 0;
-    pointer-events: all;
-    margin: 30px;
-    
+    left: 12%;
   }
-  
+}
+
+.links {
+  text-align: center;
+  font-size: 30px;
+  background: #272727;
+  padding: 20px 20px 20px 20px;
+  border-bottom: 3px solid white;
+}
+
+a:link, a:visited {
+  color: white;
 }
 
 @media screen and (max-width: 600px) {
