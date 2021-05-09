@@ -101,7 +101,28 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    path: '/',
+    name: 'Main page',
+  }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router
+
 export default {};
+
 </script>
 
 <style lang="scss">
@@ -170,7 +191,7 @@ li {
 
 .news {
   background: #272727;
-  height: 400px;
+  height: 600px;
   text-align: center;
   color: white;
   font-size: 30px;
