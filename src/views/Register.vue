@@ -1,10 +1,10 @@
 <template>
   <div id="login">
-    <h1>Войти</h1>
-    <form @submit.prevent="Login">
+    <h1>Регистрация</h1>
+    <form @submit.prevent="Register">
       <input type="text" placeholder="E-mail" v-model="email" />
       <input type="password" placeholder="Password" v-model="password" />
-      <input type="submit" value="Login" />
+      <input type="submit" value="Register" />
     </form>
   </div>
 </template>
@@ -18,16 +18,16 @@ export default {
     const email = ref("");
     const password = ref("");
 
-    const Login = () => {
+    const Register = () => {
       firebase
         .auth()
-        .signInWithEmailAndPassword(email.value, password.value)
-        .then(data => console.log(data))
+        .createUserWithEmailAndPassword(email.value, password.value)
+        .then(user => {alert(user)})
         .catch((e) => alert(e.message));
     };
 
     return {
-      Login,
+      Register,
       email,
       password,
     };
