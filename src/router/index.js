@@ -4,6 +4,7 @@ import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 import AddEmployee from '@/views/AddEmployee.vue'
 import AddNews from '@/views/AddNews.vue'
+import EmployeesList from '@/views/EmployeesList'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/addemployee',
     name: 'Add employee',
     component: AddEmployee
+  },
+  {
+    path: '/employees',
+    name: 'Employees',
+    component: EmployeesList
   }
 ]
 

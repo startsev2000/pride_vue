@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
+import { onUnmounted, ref } from 'vue'
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyAD6ClEh6wi6CsbYP6maWQb5Uw8uxnSoQg",
@@ -21,5 +23,26 @@ export const addEmployee = employee => {
     return employeesCollection.add(employee)
 }
 
+export const getEmployee = async id => {
+    const employee = await employeesCollection.doc(id).get()
+    return employee.exists ? employee.data() : null
+}
+
+export const updateEmployee = (id, employee) => {
+    return employeesCollection.doc(id).update(employee)
+}
+
+export const deleteEmployee = id => {
+    return employeesCollection.doc(id).delete()
+}
+
+export const loadEmployees = () => {
+    const employees = ref([])
+    const close = employeesCollection.onSnapshot(snapshot => {
+        employees.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+    })
+    onUnmounted(close)
+    return employees
+}
 
 createApp(App).use(router).mount('#app')

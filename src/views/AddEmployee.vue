@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { addEmployee } from '@/main'
+import { addEmployee } from '@/firebase'
 import { reactive } from 'vue'
 
 export default {
