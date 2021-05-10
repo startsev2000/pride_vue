@@ -14,4 +14,12 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
+const db = firebase.firestore()
+const employeesCollection = db.collection('employees')
+
+export const addEmployee = employee => {
+    return employeesCollection.add(employee)
+}
+
+
 createApp(App).use(router).mount('#app')

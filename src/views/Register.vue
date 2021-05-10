@@ -22,7 +22,7 @@ export default {
       firebase
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value)
-        .then(user => {alert(user)})
+        .then()
         .catch((e) => alert(e.message));
     };
 
