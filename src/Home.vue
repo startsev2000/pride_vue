@@ -1,15 +1,19 @@
 <template>
   <div class="page">
     <header class="topnav">
-      <a class="name">PRIDE</a>
-      <a class="menu">Меню</a>
+      <a class="headpart">PRIDE</a>
+      <a class="headpart" href="\\pride-fs\Рабочая\Кадры">Наш коллектив</a>
+      <a class="headpart" href="\\pride-f/Lib"
+        >Библиотека внутренних документов</a
+      >
+      <a class="headpart" href="">Биржа идей</a>
     </header>
     <main>
       <div class="mainhead">
         <a class="topname">PRIDE</a><br />
         <a class="comment">самое лучшее состояние, высшая степень!</a>
       </div>
-      <div class="news">Новость дня</div>
+      <div class="news"><h2>Новость дня</h2></div>
       <div class="hello">
         <div class="helloimage">
           <img :src="require('./assets/P.Sisoev.jpg')" />
@@ -74,19 +78,14 @@
           помогаем адаптировать проекты под реалии российского рынка и
           сопровождаем их на всех этапах реализации.
         </p>
-        <img :src="require('./assets/achievement-1.svg')" class="ach1"/>
-        <img :src="require('./assets/achievement-2.svg')" class="ach2"/>
-        <img :src="require('./assets/achievement-3.svg')" class="ach3"/>
+        <img :src="require('./assets/achievement-1.svg')" class="ach1" />
+        <img :src="require('./assets/achievement-2.svg')" class="ach2" />
+        <img :src="require('./assets/achievement-3.svg')" class="ach3" />
       </div>
       <div class="business">
         <h2>Основные бизнес-процессы</h2>
         <img :src="require('./assets/business-processes.png')" />
       </div>
-      <div class="links">
-        <a href="\\pride-fs\Рабочая\Кадры"><p>Наш коллектив</p></a>
-        <a href="\\pride-f/Lib"><p>Библиотека внутренних документов</p></a>
-        <a href=""><p>Биржа идей</p></a>
-      </div> 
     </main>
     <div class="mapinfo">
       <div class="map">
@@ -101,11 +100,9 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Home'
+  name: "Home",
 };
-
 </script>
 
 <style lang="scss">
@@ -123,6 +120,9 @@ html {
   padding-left: 3%;
   padding-right: 3%;
 }*/
+h2 {
+  font-size: 30px;
+}
 
 li {
   padding: 10px 10px 10px 10px;
@@ -151,11 +151,8 @@ li {
   color: white;
 }
 
-.name {
+.headpart {
   float: left;
-}
-.menu {
-  float: right;
 }
 
 .mainhead {
@@ -294,10 +291,6 @@ li {
   background: #272727;
   padding: 20px 20px 20px 20px;
   border-bottom: 3px solid white;
-}
-
-a:link, a:visited {
-  color: white;
 }
 
 @media screen and (max-width: 600px) {
