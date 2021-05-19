@@ -84,16 +84,31 @@
       </div>
       <div class="business">
         <h2>Основные бизнес-процессы</h2>
-        <img :src="require('./assets/business-processes.png')" />
+        <object
+          data="https://example.com/test.pdf#page=2"
+          type="application/pdf"
+        >
+          <iframe
+            src="https://example.com/test.pdf#page=2"
+            width="100%"
+            height="100%"
+            style="border: none"
+          >
+            <p>
+              Your browser does not support PDFs.
+              <a href="https://example.com/test.pdf">Download the PDF</a>.
+            </p>
+          </iframe>
+        </object>
       </div>
     </main>
     <div class="mapinfo">
-      <div class="map">
-        <img :src="require('./assets/map.png')" />
-      </div>
       <div class="time">
         <h2>График работы</h2>
         <p>С 9:00 до 18:00 или 10:00 до 19:00, с перерывом на обед</p>
+      </div>
+      <div class="map">
+        <img :src="require('./assets/map.png')" />
       </div>
     </div>
   </div>
@@ -107,7 +122,7 @@ export default {
 
 <style lang="scss">
 body {
-  font-family: "Arial Narrow"; // по пожеланию заказчика
+  font-family: "PTSerif"; // по пожеланию заказчика
 }
 
 body,
@@ -120,8 +135,10 @@ html {
   padding-left: 3%;
   padding-right: 3%;
 }*/
+
 h2 {
-  font-size: 30px;
+  font-family: "IBMPlex";
+  font-size: 40px;
 }
 
 li {
@@ -230,15 +247,19 @@ li {
 .business {
   text-align: center;
   font-size: 30px;
+  height: 100%;
   img {
     width: 75%;
     height: 75%;
+  }
+  iframe {
+    height: 620px;
   }
 }
 
 .mapinfo {
   background: #272727;
-  padding: 20px 40px 40px;
+  padding: 0px 40px 40px;
   img {
     width: 75%;
     height: 75%;
@@ -265,23 +286,6 @@ li {
   img {
     width: 55%;
     height: 55%;
-  }
-  .ach1 {
-    position: relative;
-    z-index: 0;
-    left: 5%;
-    bottom: 5%;
-  }
-  .ach2 {
-    position: absolute;
-    z-index: 1;
-    left: 1%;
-    bottom: 14%;
-  }
-  .ach3 {
-    position: relative;
-    z-index: 2;
-    left: 12%;
   }
 }
 
