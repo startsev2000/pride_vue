@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>pride</p>
+    <img :src="require('./assets/pride_logo.svg')" class="logo"/>
   </div>
   <div class="divider"></div>
   <div class="row">
@@ -52,6 +52,9 @@ html {
   margin: 0;
 }
 
+.logo {
+  vertical-align: top;
+}
 .button-wrapper {
   display: inline-block;
   margin: 0;
